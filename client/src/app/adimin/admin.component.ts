@@ -20,7 +20,7 @@ export class adminComponent {
     admin_login(){
         if(this.admin.email==="admin@this.com" && this.admin.password==="admin"){
             this.isLoggedIn=true;
-            this.http.get("http://meanloginreg.herokuapp.com/users/get_all").subscribe((data)=>{
+            this.http.get("https://meanloginreg.herokuapp.com/users/get_all").subscribe((data)=>{
                 this.users=data;
             })
         }else{

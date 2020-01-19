@@ -62,7 +62,7 @@ export interface TokenPayload{
             }
 
             public register(user:TokenPayload):Observable<any>{
-                const base=this.http.post('http://meanloginreg.herokuapp.com/users/register',user)
+                const base=this.http.post('https://meanloginreg.herokuapp.com/users/register',user)
 
                 const request = base.pipe(
                     map((data:TokenResponse)=>{
@@ -76,7 +76,7 @@ export interface TokenPayload{
             }
 
             public login(user:TokenPayload):Observable<any>{
-                const base=this.http.post('http://meanloginreg.herokuapp.com/users/login',user)
+                const base=this.http.post('https://meanloginreg.herokuapp.com/users/login',user)
 
                 const request = base.pipe(
                     map((data:TokenResponse)=>{
@@ -90,7 +90,7 @@ export interface TokenPayload{
             }
 
             public profile (): Observable<any>{
-                return this.http.get('http://meanloginreg.herokuapp.com/users/profile',{
+                return this.http.get('https://meanloginreg.herokuapp.com/users/profile',{
                     headers:{ Authorization: `${this.getToken()}`}
                 })
             }
